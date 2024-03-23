@@ -1,0 +1,86 @@
+{
+    "metacharacters" : [
+        {
+            "character": ".",
+            "id": "metachar.dot"
+        },
+        {
+            "character": "*",
+            "id": "metachar.star"
+        },
+        {
+            "character": "+",
+            "id": "metachar.plus"
+        },
+        {
+            "character": "?",
+            "id": "metachar.question"
+        },
+        {
+            "character": "^",
+            "id": "metachar.caret"
+        },
+        {
+            "character": "$",
+            "id": "metachar.dollar"
+        },
+        {
+            "character": "[",
+            "id": "metachar.lbracket"
+        },
+        {
+            "character": "]",
+            "id": "metachar.rbracket"
+        },
+        {
+            "character": "{",
+            "id": "metachar.lbrace"
+        },
+        {
+            "character": "}",
+            "id": "metachar.rbrace"
+        },
+        {
+            "character": "(",
+            "id": "metachar.lparen"
+        },
+        {
+            "character": ")",
+            "id": "metachar.rparen"
+        },
+        {
+            "character": "|",
+            "id": "metachar.pipe"
+        },
+        {
+            "character": "\\",
+            "id": "metachar.backslash"
+        }
+    ],
+    "sets": [
+        {
+            "identifier": "\\d",
+            "id": "set.digit"
+        },
+        {
+            "identifier": "\\D",
+            "id": "set.non-digit"
+        },
+        {
+            "identifier": "\\s",
+            "id": "set.whitespace"
+        },
+        {
+            "identifier": "\\S",
+            "id": "set.non-whitespace"
+        },
+        {
+            "identifier": "\\w",
+            "id": "set.word"
+        },
+        {
+            "identifier": "\\W",
+            "id": "set.non-word"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://x4am6v8hj4xj"]
+
+[ext_resource type="Script" path="res://Connection.cs" id="1_s8dod"]
+
+[sub_resource type="SystemFont" id="SystemFont_aft3o"]
+multichannel_signed_distance_field = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xilma"]
+bg_color = Color(0.101961, 0.105882, 0.14902, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0509804, 0.0509804, 0.0745098, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="SystemFont" id="SystemFont_i0g41"]
+font_names = PackedStringArray("Monospace")
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_sw0nf"]
+font_names = PackedStringArray("Monospace")
+multichannel_signed_distance_field = true
+
+[node name="Connection" type="Line2D"]
+points = PackedVector2Array(1451, -35)
+width = 3.0
+script = ExtResource("1_s8dod")
+ConditionFont = SubResource("SystemFont_aft3o")
+
+[node name="Config" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="BGOutline" type="Button" parent="Config"]
+offset_left = 460.0
+offset_top = 215.0
+offset_right = 1460.0
+offset_bottom = 865.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xilma")
+disabled = true
+
+[node name="RegexCondition" type="LineEdit" parent="Config"]
+offset_left = 482.0
+offset_top = 341.0
+offset_right = 828.0
+offset_bottom = 371.0
+theme_override_fonts/font = SubResource("SystemFont_i0g41")
+theme_override_font_sizes/font_size = 16
+text = "(a|b)*.*=.*"
+
+[node name="Close" type="Button" parent="Config"]
+offset_left = 1401.0
+offset_top = 229.0
+offset_right = 1445.0
+offset_bottom = 274.0
+theme_override_fonts/font = SubResource("SystemFont_sw0nf")
+theme_override_font_sizes/font_size = 32
+text = "X"
+flat = true

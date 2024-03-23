@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmbpaju3juvqb"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_xpil6"]
+[ext_resource type="Shader" path="res://StaticGrid.gdshader" id="2_qqxf5"]
+[ext_resource type="Texture2D" uid="uid://csstc1s7rwqxn" path="res://assets/alpha_mask_static_grid.png" id="3_ov5fj"]
+[ext_resource type="PackedScene" uid="uid://kvrix6xn7y7d" path="res://assets/zweiter_versuch.aseprite" id="6_qmdy2"]
+[ext_resource type="Texture2D" uid="uid://by82078qjiq7c" path="res://assets/package.aseprite" id="6_v7ija"]
+[ext_resource type="Texture2D" uid="uid://mueepd4hn2by" path="res://assets/info_display_2.png" id="7_d4dnt"]
+[ext_resource type="Script" path="res://Package.cs" id="7_ugm13"]
+[ext_resource type="FontFile" uid="uid://dchvxtedlq5x1" path="res://assets/joystix monospace.otf" id="8_85p52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_113fn"]
+shader = ExtResource("2_qqxf5")
+shader_parameter/alpha_texture = ExtResource("3_ov5fj")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xpil6")
+
+[node name="New" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 591.0
+offset_right = 62.0
+offset_bottom = 644.0
+text = "New"
+
+[node name="Step" type="Button" parent="."]
+offset_left = 76.0
+offset_top = 591.0
+offset_right = 134.0
+offset_bottom = 644.0
+text = "Step"
+
+[node name="Lines" type="Node2D" parent="."]
+
+[node name="States" type="Node2D" parent="."]
+
+[node name="StaticGrid" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_113fn")
+position = Vector2(482, 365)
+
+[node name="CurrentInput" type="Label" parent="."]
+offset_left = 964.0
+offset_right = 1921.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 48
+text = "ello"
+vertical_alignment = 1
+
+[node name="PassedInput" type="Label" parent="."]
+offset_right = 960.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 48
+text = "H"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Seperator" type="ColorRect" parent="."]
+offset_left = 960.0
+offset_right = 964.0
+offset_bottom = 128.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 851.0
+offset_right = 1921.0
+offset_bottom = 858.0
+
+[node name="zweiter_versuch" parent="." instance=ExtResource("6_qmdy2")]
+visible = false
+texture_filter = 1
+position = Vector2(1008, 965)
+scale = Vector2(4, 4)
+
+[node name="zweiter_versuch2" parent="." instance=ExtResource("6_qmdy2")]
+visible = false
+texture_filter = 1
+position = Vector2(1136, 965)
+scale = Vector2(4, 4)
+frame = 8
+
+[node name="Package" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(1154, 949)
+scale = Vector2(4, 4)
+texture = ExtResource("6_v7ija")
+script = ExtResource("7_ugm13")
+
+[node name="InfoDisplay" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.403922, 0.462745, 0.717647, 1)
+texture_filter = 1
+position = Vector2(143, 329)
+texture = ExtResource("7_d4dnt")
+
+[node name="Label" type="Label" parent="InfoDisplay"]
+offset_left = -67.0
+offset_top = -201.0
+offset_right = 124.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("8_85p52")
+theme_override_font_sizes/font_size = 11
+text = ">Test 1/5:Complete."
